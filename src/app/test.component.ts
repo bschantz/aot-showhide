@@ -1,8 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Overlay} from '@angular/cdk/overlay';
-import {ComponentPortal} from '@angular/cdk/portal';
-
-import {PanelComponent} from './panel.component';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -11,7 +7,6 @@ import {PanelComponent} from './panel.component';
   ],
   template: `
     <div class="bounds">
-      <button mat-button (click)="open()">Open Panel</button>
       <div class="content"
            fxLayout="row"
            fxLayout.xs="column"
@@ -32,26 +27,4 @@ import {PanelComponent} from './panel.component';
     </div>
   `
 })
-export class TestComponent implements OnInit {
-  formButtonXs = true;
-
-  constructor(
-    private overlay: Overlay,
-  ) {
-  }
-
-
-  ngOnInit() {
-  }
-
-  open() {
-    const overlayRef = this.overlay.create({
-      positionStrategy: this.overlay.position()
-        .global()
-        .centerHorizontally()
-        .top('400px')
-    });
-    const portal = new ComponentPortal(PanelComponent);
-    overlayRef.attach<PanelComponent>(portal);
-  }
-}
+export class TestComponent {}
