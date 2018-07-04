@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
+## Purpose
+
+Provide an example of an apparent bug when creating a custom responsive directive extending `ShowHideDirective`.
+
+Setup the project in the normal way, then run using `ng serve`: The second block will be hidden when printing.
+Running with `ng serve --aot` doesn't hide the element on print.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
